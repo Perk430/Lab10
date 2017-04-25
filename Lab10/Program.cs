@@ -10,6 +10,10 @@ namespace Lab10
     {
         static void Main(string[] args)
         {
+
+            bool run = true;
+
+
             Movie[] MArray = new Movie[10]; // an array of objects
 
             MArray[0] = new Movie("Star Wars", "Sci Fi");
@@ -23,32 +27,23 @@ namespace Lab10
             MArray[8] = new Movie("Hidden Figures", "Drama");
             MArray[9] = new Movie("Boss Baby", "Animated");
 
-            Console.WriteLine("Please enter a category: ");
-
-            string CategoryInput = Console.ReadLine();
-
-
-            //for (int i = 0; i < MArray.Length; i++)
-            //{
-            //    MArray[i] = new Movie(); //create the Triangle object
-            //                             //TList.Add(new Movie());//For a list of objectsConsole.WriteLine("Please enter a value for Base");
-
-
-            //    ValidatingMovieInput.GetNumberInRangeDouble(0, string.MaxValue);
-
-            //    Console.WriteLine("Please enter a value for height");
-            //    ValidatingMovieInput;
-            //}
-
-            foreach (Movie temp in MArray)
+            do
             {
-                if (CategoryInput.ToLower() == temp.Category1.ToLower())// match 
-                    Console.WriteLine(temp.Title1);
-            }
+                Console.WriteLine("Please enter a category: \n");
 
+                //Validating user input
 
+                string CategoryInput = Console.ReadLine();
 
+                foreach (Movie temp in MArray)
+                {
+                    if (CategoryInput.ToLower() == temp.Category1.ToLower())// match 
+                        Console.WriteLine(temp.Title1);
+                }
 
+                run = ValidatingMovieInput.Continue();//Calling method asking user if he/she wants to continue
+
+            } while (run == true);
         }
-        }
+     }
 }
