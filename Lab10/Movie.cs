@@ -10,7 +10,9 @@ namespace Lab10
     {
         private string Title;
         private string Category;
-
+        
+        //Added regions for practice and to "clean up" code.
+        #region
         public string Title1
         {
             get
@@ -23,7 +25,9 @@ namespace Lab10
             }
 
         }
+        #endregion  
 
+        #region
         public string Category1
         {
             get
@@ -35,6 +39,8 @@ namespace Lab10
                 Category = value;
             }
         }
+        #endregion
+
 
         public Movie()
         {
